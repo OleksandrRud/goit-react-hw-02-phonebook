@@ -4,6 +4,7 @@ class ContactForm extends Component {
     name: '',
     number: '',
   };
+
   handleImput = event => {
     this.setState({ [event.currentTarget.name]: event.currentTarget.value });
   };
@@ -40,7 +41,9 @@ class ContactForm extends Component {
             value={this.state.number}
             onChange={this.handleImput}
           />
-          <button type="submit">Add contact</button>
+          <button type="submit" onClick={() => this.props.qqq(this.state.name)}>
+            Add contact
+          </button>
         </form>
       </div>
     );
