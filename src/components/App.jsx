@@ -20,9 +20,9 @@ export class App extends Component {
     }));
   };
 
-  eee = e => {
+  findExistsContact = event => {
     this.state.contacts.map(data =>
-      data.name === e ? alert('wwww') : this.state.contacts.name
+      data.name === event ? alert(event + 'is already in contacts') : data
     );
   };
 
@@ -47,7 +47,7 @@ export class App extends Component {
     return (
       <div
         style={{
-          height: '100vh',
+          height: '100%',
           display: 'flex',
           justifyContent: 'center',
           alignItems: 'center',
@@ -57,7 +57,10 @@ export class App extends Component {
       >
         <div>
           <h1>Phonebook</h1>
-          <ContactForm formSubmit={this.formSubmit} qqq={this.eee} />
+          <ContactForm
+            formSubmit={this.formSubmit}
+            onFind={this.findExistsContact}
+          />
 
           <h2>Contacts</h2>
           <Filter
