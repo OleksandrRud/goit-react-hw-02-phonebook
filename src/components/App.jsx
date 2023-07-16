@@ -22,7 +22,9 @@ export class App extends Component {
 
   findExistsContact = event => {
     this.state.contacts.map(data =>
-      data.name === event ? alert(event + 'is already in contacts') : data
+      data.name.toLowerCase() === event.toLowerCase()
+        ? alert(`${event} is already in contacts`)
+        : data
     );
   };
 
