@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 function Filter({ value, onChange }) {
   return (
     <div>
@@ -6,4 +7,8 @@ function Filter({ value, onChange }) {
     </div>
   );
 }
+Filter.propTypes = {
+  value: PropTypes.string.isRequired,
+  onChange: PropTypes.func.isRequired,
+};
 export default Filter;
